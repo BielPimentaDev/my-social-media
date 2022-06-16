@@ -13,7 +13,7 @@ export default function Home({isAuth, userAuth, setUserAuth, setIsAuth}) {
   let navigate = useNavigate()
   useEffect(()=>{
     console.log(userAuth)
-    userAuth && navigate('/feed')
+    
   })
 
   const [loginEmail, setLoginEmail] = useState('')
@@ -58,7 +58,7 @@ export default function Home({isAuth, userAuth, setUserAuth, setIsAuth}) {
 
 
       <section className='loginSection'> 
-          <p>Usuario: {userAuth?.email} </p>
+          
 
         <div className="welcomeSection">
           <h1>BEM-VINDO</h1>
