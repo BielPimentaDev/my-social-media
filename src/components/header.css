@@ -1,0 +1,39 @@
+.header{
+    background-color: #2C99FE;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    align-content: center;
+    padding: 10px;
+    position:fixed;
+    top:0;
+    width: 100%;
+}
+
+.miniLogo{
+    text-transform: uppercase;
+    color:white;
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.my{
+    font-size: 1rem;
+    color: #0300A6
+} 
+
+.header nav{
+    color:white;
+    display: flex;
+    align-items: center;
+    gap:30px;
+    padding: 0 15px;
+}
+
+.header nav span {
+    font-weight: 500;
+}
+
+.header i{
+    cursor: pointer
+}

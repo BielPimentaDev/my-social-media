@@ -1,0 +1,153 @@
+
+.loginContainer{
+    width: 100%;
+    max-width: 1500px;
+    margin: auto;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+   
+}
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.myLogo, .socialMediaLogo{
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 40px;
+
+}
+
+.socialMediaLogo{
+    font-size:65px;
+    color:#329CFE;
+}
+
+.logoSection img{
+    width: 400px;
+}
+
+
+
+.loginSection{
+    height: 90%;
+    max-height: 700px;
+}
+
+.welcomeSection{
+    margin: 20px;
+}
+
+.welcomeSection h1{
+    
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 50px;
+    margin: 20px;
+    
+}
+
+.welcomeSection p{
+    font-size: 20px;
+    color: #9C9C9C;
+    margin-bottom: 50px;
+    font-weight :bold ;
+
+}
+
+
+form{
+    
+    display: flex;
+    gap:40px;
+    flex-direction: column;
+}
+
+form .inputContainer{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    text-align: start;
+}
+
+form  .inputContainer label{
+    font-weight: 800;
+    font-size: 18px;
+}
+form  .inputContainer input{
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #626262;
+    
+}
+
+form  .inputContainer input:focus{
+    border: 2px solid  #2460BA;
+    
+
+
+    
+}
+
+.submitButton{
+    color:white;
+    background-color: #0300A6;
+    font-size: 20px;
+    padding: 10px;
+    border: none;
+}
+
+.checkBoxContainer{
+    
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 900;
+}
+form p{
+    font-weight: bold;
+}
+
+form a{
+    cursor: pointer;
+    color: #1117B0;
+}
+
+
+@media (max-width: 700px) {
+    .loginContainer{
+       
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 90%;
+    }
+    .loginImg{
+        display: none;
+    }
+
+    .welcomeSection h1{
+        font-size: 40px;
+    }
+
+    .myLogo{
+        font-size: 25px;
+    }
+    .socialMediaLogo{
+        font-size: 40px;
+    }
+
+    .welcomeSection h1{
+        font-size: 30px ;
+    }
+
+    .welcomeSection p{
+        font-size: 15px;
+    }
+}
