@@ -29,7 +29,7 @@ export default function Header({setIsAuth}) {
 
             <nav>
                 <i onClick={logout}><SignOut size={32} weight="fill" /></i>
-                <i><User size={35} weight="fill" /> </i>
+                
                 <span>Gabriel Pimenta</span>
             </nav>
         

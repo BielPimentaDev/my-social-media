@@ -66,6 +66,7 @@ export default function Feed({isAuth, setIsAuth, userAuth, setUserAuth}) {
   return (
     <>
     { !isLoading ? 
+    <>
      <div className='feed'>
      <Header setIsAuth={setIsAuth}/>
      
@@ -76,11 +77,11 @@ export default function Feed({isAuth, setIsAuth, userAuth, setUserAuth}) {
      <div className='textAreaContainer'>
          <section className="picSection">
            <img src={myImage}/>
+           <h2>{userAuth?.email}</h2>
 
          </section>
 
          <div className='postArea '>
-           <h2>{userAuth?.email}</h2>
            
            <textarea placeholder='Digite aqui seu post...' className='textArea' rows="6" cols="80" onChange={(ev)=> setCreatePost(ev.target.value)}></textarea>
 
@@ -106,10 +107,10 @@ export default function Feed({isAuth, setIsAuth, userAuth, setUserAuth}) {
          <section className="picSection">
            <img src={myImage}/>
 
+           <h2>Gabriel Pimenta</h2>
          </section>
 
          <div className='postArea'>
-           <h2>Gabriel Pimenta</h2>
           
            <div className="pArea">
              <p>{post.post} </p>
@@ -142,8 +143,9 @@ export default function Feed({isAuth, setIsAuth, userAuth, setUserAuth}) {
 
      </div>
 
-     <Footer/>
    </div>
+     <Footer/>
+     </>
    : 
    <div className= 'loading'>     
    <ClipLoader color='#2C99FE' loading={isLoading}  size={150} />

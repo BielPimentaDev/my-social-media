@@ -26,18 +26,26 @@
     box-shadow: 5.957253932952881px 8.51036262512207px 14.467616081237793px 0.8510362505912781px #00000040;
     padding: 20px;
     display: flex;
+    flex-direction: column
     
+    
+}
+.picSection{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px
 }
 
 .picSection img{
     width: 70px;
     border-radius: 50% ;
+    
 }
 
 
 .postArea{
     text-align: start;
-    margin: 0 30px;
+    margin: 0 ;
     width: 100%;
     
 }
@@ -62,6 +70,9 @@
     padding: 10px;
     width: 100%;
     text-align: end;
+    display: flex;
+    justify-content: end;
+    align-items:center;
 }
 
 .spanArea span{
@@ -98,9 +109,11 @@
 .textAreaContainer{
     background-color: white;
     box-shadow: 5.957253932952881px 8.51036262512207px 14.467616081237793px 0.8510362505912781px #00000040;
-    padding: 20px;
+    padding: 35px;
     display: flex;
     margin: auto;
+    flex-direction:column;
+    justify-content: center;
     
 }
 
@@ -111,5 +124,15 @@
 }
 
 @media (max-width: 700px){
+    .feed{
+        height: 100%;
+    }
+
+    .postsContainer{
+        width: 100%;
+        padding: 0;
+    }
+
+    
     
 }
