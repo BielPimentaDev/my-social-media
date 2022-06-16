@@ -8,7 +8,7 @@ import Header from './components/Header'
 import Feed from './pages/Feed'
 import Login from './pages/Login'
 
-import Register from './pages/Register'
+
 
 function App() {
   const [userAuth, setUserAuth] = useState({})
@@ -20,7 +20,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Login userAuth={userAuth } setUserAuth = {setUserAuth} setIsAuth={setIsAuth} />}/>
           <Route path='/feed' element= {<Feed userAuth={userAuth } setUserAuth = {setUserAuth} setIsAuth={setIsAuth} isAuth={isAuth} />}/>
-          <Route path='/register' element={<Register userAuth={userAuth } setUserAuth = {setUserAuth} setIsAuth={setIsAuth}/>}/>
+          
         </Routes>
     
         </Router>
