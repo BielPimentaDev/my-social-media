@@ -77,7 +77,7 @@ export default function Feed({isAuth, setIsAuth, userAuth, setUserAuth}) {
      <div className='textAreaContainer'>
          <section className="picSection">
            <img src={myImage}/>
-           <h2>{userAuth?.email}</h2>
+           <h2>Olá, {userAuth?.email}!</h2>
 
          </section>
 
@@ -104,9 +104,16 @@ export default function Feed({isAuth, setIsAuth, userAuth, setUserAuth}) {
            return(
 
              <div className='postContainer'>
+             {
+               
+               post.userId === userAuth.uid &&
+              <div className= 'iconsSection'> <i onClick= {() => deletePost(post.id)}>
+               <TrashSimple size={32} weight="fill" />
+             </i> </div>
+               
+             }
          <section className="picSection">
            <img src={myImage}/>
-
            <h2>Gabriel Pimenta</h2>
          </section>
 
@@ -118,14 +125,7 @@ export default function Feed({isAuth, setIsAuth, userAuth, setUserAuth}) {
            <div className="spanArea">
            <span>15/06/2022</span>
              <span>{post.username}</span> 
-             {
-               
-               post.userId === userAuth.uid &&
-               <i onClick= {() => deletePost(post.id)}>
-               <TrashSimple size={32} weight="fill" />
-             </i>
-               
-             }
+            
            </div>
 
 
@@ -143,8 +143,8 @@ export default function Feed({isAuth, setIsAuth, userAuth, setUserAuth}) {
 
      </div>
 
-   </div>
      <Footer/>
+   </div>
      </>
    : 
    <div className= 'loading'>     
