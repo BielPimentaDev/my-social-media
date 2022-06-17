@@ -84,7 +84,7 @@ export default function Home({isAuth, userAuth, setUserAuth, setIsAuth}) {
           </div>
 
         <button onClick={() => login()} className='submitButton' >ENTRAR</button>
-        <p>Não possui uma conta? <a>Cadastre-se</a></p>
+        <p>Não possui uma conta? <Link to= '/register'><a>Cadastre-se</a></Link> </p>
         <p> © Gabriel Pimenta</p>
       </form>
       </section>

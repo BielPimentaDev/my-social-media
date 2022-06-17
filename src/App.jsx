@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-
+import Register from './pages/Register/Index'
 
 import './App.css'
 import Footer from './components/Footer'
@@ -20,6 +20,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Login userAuth={userAuth } setUserAuth = {setUserAuth} setIsAuth={setIsAuth} />}/>
           <Route path='/feed' element= {<Feed userAuth={userAuth } setUserAuth = {setUserAuth} setIsAuth={setIsAuth} isAuth={isAuth} />}/>
+          <Route path='/register' element= {<Register userAuth={userAuth } setUserAuth = {setUserAuth} setIsAuth={setIsAuth} isAuth={isAuth} />}/>
           
         </Routes>
     

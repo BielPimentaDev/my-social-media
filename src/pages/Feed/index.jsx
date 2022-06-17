@@ -14,12 +14,9 @@ import ClipLoader from "react-spinners/ClipLoader";
 export default function Feed({isAuth, setIsAuth, userAuth, setUserAuth}) {
 
   
-
   const [posts, setPosts] = useState({})
   const [createPost, setCreatePost] = useState('')
   const [isLoading, setIsLoading] = useState(true)
-
- 
 
   const collectionRef = collection(db, "posts")
   let navigate = useNavigate()
@@ -31,7 +28,7 @@ export default function Feed({isAuth, setIsAuth, userAuth, setUserAuth}) {
   }
  
  const newPost = async ()=>{
-    await addDoc(collectionRef, {post: createPost, title: 'Titulo', username: userAuth.email, userId: userAuth.uid})
+    await addDoc(collectionRef, {post: createPost, title: userAuth.displayName, username: userAuth.email, userId: userAuth.uid, userImg : userAuth.photoURL})
     getPosts()
  }
 
@@ -76,8 +73,9 @@ export default function Feed({isAuth, setIsAuth, userAuth, setUserAuth}) {
      
      <div className='textAreaContainer'>
          <section className="picSection">
-           <img src={myImage}/>
-           <h2>Olá, {userAuth?.email}!</h2>
+           <img src={userAuth?.photoURL}/>
+           <h2>Olá, {userAuth?.displayName}!</h2>
+           
 
          </section>
 
@@ -113,8 +111,8 @@ export default function Feed({isAuth, setIsAuth, userAuth, setUserAuth}) {
                
              }
          <section className="picSection">
-           <img src={myImage}/>
-           <h2>Gabriel Pimenta</h2>
+           <img src={post.userImg}/>
+           <h2>{post.title}</h2>
          </section>
 
          <div className='postArea'>

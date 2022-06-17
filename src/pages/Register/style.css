@@ -1,0 +1,129 @@
+.register{
+    width:100%;
+    text-align: center;
+}
+header {
+    font-weight: 900;
+    font-size: 40px ;
+    color: #329CFE;
+    text-transform: uppercase;
+    text-align:center;
+    padding:15px;
+    margin-bottom:30px;
+}
+
+header h1 span{
+    color:black;
+    font-size: 50px;
+}
+
+.registerContainer{
+    margin: auto;
+    justify-content: space-around;
+    display: flex;
+    padding: 15px;
+    max-width: 1500px;
+}
+        
+
+
+.inputsContainer{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    width: 35%;
+    max-width: 650px;
+    gap:20px;
+    
+}
+
+.inputContainer input{
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #626262;
+    
+}
+
+.inputContainer input:focus{
+    border: 2px solid  #2460BA;
+}
+
+.inputsContainer button{
+    padding:20px;
+    margin-top:50px;
+    background-color: #0300A6;
+    color:white;
+    text-transform: uppercase;
+    font-weight: 600;
+    border:none;
+}
+
+.inputContainer{
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+.secundaryButtonSection {
+    text-align: center;
+    font-weight: 600;
+    display:flex;
+    flex-direction: column;
+    gap:30px
+
+}
+
+.secundaryButtonSection a{
+    color: #0300A6
+}
+
+.inputContainer label{
+    font-weight: 900;
+}
+
+.imageSection{
+    text-align:center;
+    
+}
+
+.imageSection h2{    
+    text-transform: uppercase;
+    font-weight:600;
+    font-size:60px;
+}
+
+.imageSection  p {
+    font-weight: 600;
+    font-size:20px;
+    color: #C7C7C7
+}
+
+@media (max-width: 700px) {
+    .registerContainer{
+        flex-direction: column-reverse;
+    }
+    .inputsContainer{
+        width:100%;
+        margin: auto
+    }
+
+    .imageSection{
+        margin-bottom: 30px;
+    }
+    .imageSection img{
+        display: none;
+    }
+    .imageSection h2{
+        font-size:40px;
+        
+    }
+    header {
+        font-size: 20px;
+    }
+    header h1 span{
+        font-size: 20px;
+    }
+    .inputsContainer button{
+        margin-top:20px
+    }
+}
