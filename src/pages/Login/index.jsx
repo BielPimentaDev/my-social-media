@@ -14,12 +14,13 @@ import AppContext from '../../context/AppContext'
 export default function Home({isAuth, userAuth, setUserAuth, setIsAuth}) {
   let navigate = useNavigate()
   useEffect(()=>{
-    console.log(userAuth)
+    
     
   }, [])
 
   const [loginEmail, setLoginEmail] = useState('')
   const [loginPassword, setLoginPassword] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
 
   
   
@@ -36,6 +37,7 @@ export default function Home({isAuth, userAuth, setUserAuth, setIsAuth}) {
   }
     catch(error){
       console.log(error.message)
+      alert('Usuário não cadastrado')
     }
   }
 
@@ -78,11 +80,11 @@ export default function Home({isAuth, userAuth, setUserAuth, setIsAuth}) {
 
         <div className="inputContainer">
           <label>Senha</label>
-          <input type="password" placeholder='Digite sua senha...'  onChange={ev => setLoginPassword(ev.target.value)}></input>
+          <input type={showPassword ? 'text' : 'password'} placeholder='Digite sua senha...'  onChange={ev => setLoginPassword(ev.target.value)}></input>
         </div>
 
         <div className="checkBoxContainer">
-          <input type="checkbox"></input><p>Mostrar senha</p>
+          <input type="checkbox" onClick={() => setShowPassword(!showPassword)}></input><p>Mostrar senha</p>
           </div>
 
         <button onClick={() => login()} className='submitButton' >ENTRAR</button>
