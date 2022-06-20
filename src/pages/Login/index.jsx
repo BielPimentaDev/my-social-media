@@ -3,9 +3,11 @@ import { useState, useContext } from 'react'
 import {useNavigate, Link} from 'react-router-dom'
 import loginImage from '../../assets/imgs/loginImage.webp'
 import './style.css'
-import {auth} from '../../firebaseConfig'
-import {signInWithEmailAndPassword, onAuthStateChanged} from 'firebase/auth'
+import {auth, storage} from '../../firebaseConfig'
+import {ref, uploadBytes, getDownloadURL} from 'firebase/storage'
+
 import AppContext from '../../context/AppContext'
+
 
 
 
@@ -14,7 +16,7 @@ export default function Home({isAuth, userAuth, setUserAuth, setIsAuth}) {
   useEffect(()=>{
     console.log(userAuth)
     
-  })
+  }, [])
 
   const [loginEmail, setLoginEmail] = useState('')
   const [loginPassword, setLoginPassword] = useState('')
@@ -84,7 +86,7 @@ export default function Home({isAuth, userAuth, setUserAuth, setIsAuth}) {
           </div>
 
         <button onClick={() => login()} className='submitButton' >ENTRAR</button>
-        <p>Não possui uma conta? <Link to= '/register'><a>Cadastre-se</a></Link> </p>
+        <p>Não possui uma conta? <Link to= '/register'>Cadastre-se</Link> </p>
         <p> © Gabriel Pimenta</p>
       </form>
       </section>

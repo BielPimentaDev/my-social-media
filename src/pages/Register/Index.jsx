@@ -1,12 +1,14 @@
 import React from 'react'
 import './style.css'
-import {auth} from '../../firebaseConfig'
+import {auth, storage} from '../../firebaseConfig'
 import {createUserWithEmailAndPassword, updateProfile} from 'firebase/auth'
 import { useState } from 'react'
 import {useNavigate, Link} from 'react-router-dom'
 import registerImg from '../../assets/imgs/registerImg.png'
+import {uploadBytes, ref, getDownloadURL} from 'firebase/storage'
 import axios from 'axios'
 import { useEffect } from 'react'
+import {v4} from 'uuid'
 
 
 
@@ -15,31 +17,50 @@ export default function Register() {
  
  
   let navigate = useNavigate()
-
+  const [imageUrl, setImageUrl] = useState(null)
+  const [uploadImage, setUploadImage] = useState(null)
   const [userName, setUserName] = useState('')
   const [userPassword, setUserPassword] = useState('')
   const [userEmail, setUserEmail] = useState('')
-  const [userPicture, setUserPicture] = useState('')
+  
+
+
+  
+  
+  
+
 
   const createUser = async () =>{
+    
+    
     try{
       const user = await createUserWithEmailAndPassword(auth, userEmail, userPassword)
       
       
-      await updateProfile(auth.currentUser,{
-        displayName: userName,
-        photoURL : 'https://www.nicepng.com/png/detail/202-2022264_usuario-annimo-usuario-annimo-user-icon-png-transparent.png'
-      }
-      )
+
+        const imageName = uploadImage?.name + v4()
+        const imageRef =  ref(storage, imageName)
+        const snapshot = await uploadBytes(imageRef, uploadImage)
+        const url = await getDownloadURL(snapshot.ref)
+        
+      
+        await updateProfile(auth.currentUser,{
+
+          displayName: userName,
+          photoURL : uploadImage ? url : 'https://dmhxz00kguanp.cloudfront.net/fotos/129177/papel-de-parede-spots-fundo-cinza-1m-x-1-70m-287214.jpg'
+        }
+        )
+        navigate('/feed')
+      
     }
     catch(error){
       console.log(error.message)
     }
-    navigate('/feed')
+    
   }
 
   return (
-    <div clasName= 'register'>
+    <div className= 'register'>
       <header>
         <h1><span>My</span>Social Media</h1>
       </header>
@@ -64,11 +85,18 @@ export default function Register() {
       <label>Email</label>
       <input type='email' placeholder='Digite seu email' onChange={(ev) => setUserEmail(ev.target.value)}></input>
 </div>
+
+<div className='inputContainer'>
+
+      <label>Foto</label>
+</div>
+      <input type='file' onChange={(ev) => setUploadImage(ev.target.files[0])}></input>
+
       
 
       <button onClick={createUser}>cadastrar</button>
       <div className="secundaryButtonSection">
-        <p>Já possui uma conta? <Link to= '/'><a>Faça seu login</a></Link> </p>
+        <p>Já possui uma conta? <Link to= '/'>Faça seu login</Link> </p>
         <p> © Gabriel Pimenta</p>
       </div>
       </div>

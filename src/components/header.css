@@ -39,12 +39,24 @@
     cursor: pointer
 }
 
+.userImage{
+    width:50px;
+    border-radius: 50%;
+}
+
 @media (max-width: 700px){
-    .miniLogo{
-        
+    .header{
+        justify-content:space-around;
+
+    }
+    .header h1 span{
+        font-size: 1.5rem
+    }
+    .header .my{
+        font-size:1rem;
     }
 
-    .header nav span{
+    .header nav span, .userImage{
         display: none;
     }
 }

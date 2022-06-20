@@ -1,6 +1,7 @@
 .feed{
     
     height:100%;
+    min-height:100vh;
     width: 100%;
     background-color: #F5F5F5;
     
@@ -31,6 +32,13 @@
     
     
 }
+
+.postImage {
+    max-width: 100%;
+    margin:auto;
+    display:flex;
+    justify-content:center;
+}
 .picSection{
     display: flex;
     align-items:center;
@@ -41,7 +49,9 @@
 }
 
 .picSection img{
-    width: 70px;
+    
+    width: 60px;
+    height: 60px;
     border-radius: 50% ;
     
 }
@@ -55,6 +65,8 @@
 }
 
 .pArea{
+    font-family: 'Red Hat Display';
+    font-weight: 500;
     overflow-y: auto ;
     max-height:250px;
     width: 80%;
@@ -73,19 +85,21 @@
 }
 
 .spanArea{
-    padding: 10px;
-    width: 95%;
-    text-align: end;
-    display: flex;
-    justify-content: end;
-    align-items:center;
-    padding-right:50px
+        padding: 0;
+        width: 95%;
+        text-align: end;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        padding-right: -126px;
+        padding-right: 50px;
+        margin-top: 10px;
 }
 
 .spanArea span{
     font-weight: bold;
     color:#626161;
-    margin-left: 15px;
+    margin-left: 6px;
 }
 
 .spanArea button{

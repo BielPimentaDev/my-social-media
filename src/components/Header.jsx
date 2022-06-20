@@ -5,7 +5,7 @@ import {auth} from '../firebaseConfig'
 import {signOut} from 'firebase/auth'
 import { useNavigate } from 'react-router-dom'
 
-export default function Header({setIsAuth}) {
+export default function Header({setIsAuth, userName}) {
   let navigate = useNavigate()
 
   const logout = async ()=>{
@@ -30,7 +30,8 @@ export default function Header({setIsAuth}) {
             <nav>
                 <i onClick={logout}><SignOut size={32} weight="fill" /></i>
                 
-                <span>Gabriel Pimenta</span>
+                <span>{auth.currentUser?.displayName}</span>
+                <img className='userImage' src={auth.currentUser?.photoURL}/>
             </nav>
         
     </div>
