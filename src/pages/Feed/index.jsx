@@ -8,7 +8,7 @@ import {auth} from '../../firebaseConfig'
 import {onAuthStateChanged} from 'firebase/auth'
 import {useNavigate} from 'react-router-dom'
 import { db, storage } from '../../firebaseConfig' 
-import {TrashSimple} from 'phosphor-react'
+import {TrashSimple, Camera} from 'phosphor-react'
 import {collection, getDocs, addDoc, updateDoc, doc, deleteDoc} from 'firebase/firestore'
 import ClipLoader from "react-spinners/ClipLoader";
 import {getDownloadURL, ref, uploadBytes} from 'firebase/storage';
@@ -102,7 +102,9 @@ export default function Feed({isAuth, setIsAuth, userAuth, setUserAuth}) {
            
            <textarea value={createPost} placeholder='Digite aqui seu post...' className='textArea' rows="6" cols="80" onChange={(ev)=> setCreatePost(ev.target.value)}></textarea>
 
-           <input type='file'  onChange={ev => setUploadImage(ev.target.files[0])}/>
+           <div className="fileInput">
+           
+            <input type='file' id='inputTag'  onChange={ev => setUploadImage(ev.target.files[0])}/></div>
            <div className="spanArea"><button onClick={newPost}>Postar</button>
            
            </div>

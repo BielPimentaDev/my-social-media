@@ -7,6 +7,7 @@ import {auth, storage} from '../../firebaseConfig'
 import {ref, uploadBytes, getDownloadURL} from 'firebase/storage'
 
 import AppContext from '../../context/AppContext'
+import { signInWithEmailAndPassword } from 'firebase/auth'
 
 
 

@@ -46,7 +46,7 @@ export default function Register() {
       
         await updateProfile(auth.currentUser,{
 
-          displayName: userName.capitalize(),
+          displayName: userName,
           photoURL : uploadImage ? url : 'https://dmhxz00kguanp.cloudfront.net/fotos/129177/papel-de-parede-spots-fundo-cinza-1m-x-1-70m-287214.jpg'
         }
         )

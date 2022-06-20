@@ -114,14 +114,15 @@ header h1 span{
         display: none;
     }
     .imageSection h2{
-        font-size:40px;
+        font-size:35px;
         
     }
     header {
         font-size: 20px;
+        margin-bottom: -8px;
     }
     header h1 span{
-        font-size: 20px;
+        font-size: 25px;
     }
     .inputsContainer button{
         margin-top:20px
