@@ -4,9 +4,16 @@ import './header.css'
 import {auth} from '../firebaseConfig'
 import {signOut} from 'firebase/auth'
 import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import { useEffect } from 'react'
 
 export default function Header({setIsAuth, userName}) {
+
+  
+
   let navigate = useNavigate()
+
+ 
 
   const logout = async ()=>{
       await signOut(auth)
