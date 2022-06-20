@@ -162,7 +162,7 @@
     height:100vh;
     display:flex;
     justify-content:center;
-    gap:15px;
+    
     align-items: center;
     text-align:center;
     background-color:#2C99FE;
@@ -170,15 +170,17 @@
 }
 
 
-@media (max-width: 700px){
+@media (max-width: 600px){
     .feed{
         height: 100%;
+        background-color:white;
     }
 
     .postsContainer{
         width: 100%;
         padding: 0;
         gap:5px;
+        
     }
 
     
