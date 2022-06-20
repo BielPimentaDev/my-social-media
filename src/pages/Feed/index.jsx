@@ -35,7 +35,7 @@ export default function Feed({isAuth, setIsAuth, userAuth, setUserAuth}) {
   const getPosts = async ()=>{
     const data = await getDocs(collectionRef)
     setPosts(data.docs.map(doc =>({...doc.data(), id: doc.id})))
-    setIsLoading(true)
+    setIsLoading(false)
   }
  
  const newPost = async ()=>{
