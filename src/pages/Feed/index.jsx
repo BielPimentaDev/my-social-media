@@ -17,11 +17,14 @@ import { async } from '@firebase/util'
 
 export default function Feed({isAuth, setIsAuth, userAuth, setUserAuth}) {
 
+
+
   const [uploadImage, setUploadImage] = useState(null)
   const [imageUrl, setImageUrl] = useState([])
   const [posts, setPosts] = useState({})
   const [createPost, setCreatePost] = useState('')
   const [isLoading, setIsLoading] = useState(true)
+
  
   const date = new Date
 
@@ -32,7 +35,7 @@ export default function Feed({isAuth, setIsAuth, userAuth, setUserAuth}) {
   const getPosts = async ()=>{
     const data = await getDocs(collectionRef)
     setPosts(data.docs.map(doc =>({...doc.data(), id: doc.id})))
-    setIsLoading(false)
+    setIsLoading(true)
   }
  
  const newPost = async ()=>{
@@ -170,9 +173,20 @@ export default function Feed({isAuth, setIsAuth, userAuth, setUserAuth}) {
      <Footer/>
      </>
    : 
-   <div className= 'loading'>     
-   <ClipLoader color='#2C99FE' loading={isLoading}  size={150} />
+
+   <div className= 'loading'>  
+
+   <div className='loadingBox'> 
+
+              <h1>
+            <span className='miniLogo my'>my</span>
+            <span className='miniLogo socialmedia'>Social Media</span>
+          </h1>  
+    <ClipLoader color='white' loading={isLoading}  size={80} />
+    
    </div>
+   </div>
+
 
     }
    
