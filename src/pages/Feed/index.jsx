@@ -68,7 +68,7 @@ export default function Feed({isAuth, setIsAuth, userAuth, setUserAuth}) {
   
  
   useEffect(()=>{
-    console.log(currentDate)
+    
     !userAuth && navigate('/')
     
     getPosts()    
@@ -141,7 +141,7 @@ export default function Feed({isAuth, setIsAuth, userAuth, setUserAuth}) {
          </section>
 
          <div className='postArea'>
-          {console.log(post)}
+         
            <div className="pArea">
              <p>{post.post} </p>
            </div>
